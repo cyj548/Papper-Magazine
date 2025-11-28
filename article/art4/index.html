@@ -1,1 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CSS 实用技巧</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../../assets/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .header-shadow {
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+            .dropdown-shadow {
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            }
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- 头部与列表页相同 -->
+    
+    <!-- 主要内容区域 -->
+    <main class="container mx-auto px-4 pt-24 pb-16">
+        <div class="mb-8">
+            <a href="../" class="text-primary hover:underline"><i class="fa fa-arrow-left mr-1"></i> 返回文章列表</a>
+        </div>
+        
+        <article class="bg-white p-8 rounded-lg shadow max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold mb-6 text-gray-800">Tailwind CSS 实用技巧</h2>
+            
+            <div class="flex items-center text-gray-500 mb-8 text-sm">
+                <span class="mr-4"><i class="fa fa-calendar mr-1"></i> 2025-08-31</span>
+                <span class="mr-4"><i class="fa fa-user mr-1"></i> 作者：拿铁</span>
+                <span><i class="fa fa-eye mr-1"></i> 189 阅读</span>
+            </div>
+            
+            <div class="prose max-w-none text-gray-700">
+                <p class="mb-4">TailwindCSS 凭借原子化类名大幅提升开发效率，但掌握一些实用技巧，能让开发更顺畅。</p>
+                
+                <h3 class="text-xl font-semibold mt-6 mb-3">一、自定义配置简化开发</h3>
+                <p class="mb-4">不用重复写复杂类名，在 tailwind.config.js 中自定义主题。比如项目常用特定颜色 “品牌蓝”，可在 theme.colors 里添加：brandBlue: '#165DFF'，之后直接用 text-brandBlue“bg-brandBlue” 调用，既统一风格又节省时间。</p>
+                
+                <h3 class="text-xl font-semibold mt-6 mb-3">二、响应式设计快速适配</h3>
+                <p class="mb-4">借助 Tailwind 预设的响应式前缀（sm:、md:、lg: 等），无需写媒体查询。要实现 “移动端文字居中，桌面端文字左对齐”，只需写 <p class="text-center md:text-left">内容</p>，适配不同屏幕轻松搞定。。</p>
+                
+                <h3 class="text-xl font-semibold mt-6 mb-3">三、解决类名冲突方便</h3>
+                <p class="mb-4">当第三方组件样式与自定义样式冲突时，用 @apply 整合类名并提升优先级。例如：​</p>
+                <p class='mb-4'>.custom-btn {​<br>
+                                @apply bg-blue-500 text-white py-2 px-4 !important;​<br>
+                                }</p>
+                
+            </div>
+        </article>
+    </main>
 
+    <!-- 页脚与列表页相同 -->
+    <script>
+        // JS内容与列表页相同
+    </script>
+</body>
+</html>
