@@ -1,1 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>帮助</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../assets/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .header-shadow {
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- 固定头部 -->
+    <header class="fixed top-0 left-0 right-0 bg-white header-shadow z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <i class="fa fa-cube text-primary text-2xl"></i>
+                <h1 class="text-xl font-bold text-gray-800">Papper Magazine</h1>
+            </div>
+            <div class="flex items-center space-x-10">
+                <!-- 导航菜单 -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="../" class="text-gray-700 hover:text-primary transition-colors">首页</a>
+                    <a href="../article" class="text-gray-700 hover:text-primary transition-colors">文章</a>
+                    <a href="../help" class="text-gray-700 hover:text-primary transition-colors">帮助</a>
+                    <a href="../index.html#about" class="text-gray-700 hover:text-primary transition-colors">关于我们</a>
+                    <a href="../index.html#contact" class="text-gray-700 hover:text-primary transition-colors">联系我们</a>
+                </nav>
+                
+                <!-- 用户菜单 -->
+                <div class="relative inline-block" id="userMenu">
+                    <div class="flex items-center space-x-2 cursor-pointer" id="userMenuTrigger">
+                        <img 
+                            src="../login/character.png" 
+                            alt="用户头像" 
+                            style="height:40px;width:40px;border-radius:50%;"
+                        >
+                        <span id="usernameDisplay" class="hidden md:inline text-gray-700"></span>
+                        <i class="fa fa-chevron-down text-xs text-gray-500 hidden md:inline"></i>
+                    </div>
+        
+                    <div class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg 
+                                opacity-0 invisible transform -translate-y-2 transition-all duration-300
+                                z-10" id="userDropdown">
+                        <div class="py-2">
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-primary hover:text-white transition-colors">
+                                <i class="fa fa-user mr-2"></i>个人中心
+                            </a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-primary hover:text-white transition-colors">
+                                <i class="fa fa-cog mr-2"></i>设置
+                            </a>
+                            <div class="border-t border-gray-100 my-1"></div>
+                            <a href="#" id="logoutBtn" class="block px-4 py-2 text-gray-700 hover:bg-primary hover:text-white transition-colors">
+                                <i class="fa fa-sign-out mr-2"></i>退出登录
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 移动端菜单按钮 -->
+            <button class="md:hidden text-gray-700 hover:text-primary">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <main class="container mx-auto px-4 pt-24 pb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">个人中心</h2>
+        
+        
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-800 text-white py-8 mt-10">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fa fa-cube text-primary text-2xl"></i>
+                        <h3 class="text-xl font-bold">Papper Magazine</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                       国内顶尖的中文学术核心期刊 
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">快速链接</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="../" class="hover:text-primary transition-colors">首页</a></li>
+                        <li><a href="../article/" class="hover:text-primary transition-colors">文章</a></li>
+                        <li><a href="../help/" class="hover:text-primary transition-colors">帮助</a></li>
+                        <li><a href="../#about" class="hover:text-primary transition-colors">关于我们</a></li>
+                        <li><a href="../#contact" class="hover:text-primary transition-colors">联系我们</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">服务支持</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-primary transition-colors">帮助中心</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">常见问题</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">配送信息</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">退换政策</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">联系我们</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center gap-2">
+                            <i class="fa fa-map-marker text-primary"></i>
+                            <span>中国长春市自由大路506号</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa fa-phone text-primary"></i>
+                            <span>+86 13756112406</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa fa-envelope text-primary"></i>
+                            <span>2571846242@qq.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-6 text-center text-gray-400 text-sm">
+                <p>© 2025 Papper Magazine - 保留所有权利</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
 
